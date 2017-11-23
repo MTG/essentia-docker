@@ -1,0 +1,23 @@
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get -y upgrade
+
+RUN apt-get install -y build-essential libssl-dev libffi-dev python3-dev
+
+RUN apt-get update \
+    && apt-get install -y build-essential libyaml-dev libfftw3-dev \
+    libavcodec-dev libavformat-dev libavutil-dev libavresample-dev python-dev \
+    libsamplerate0-dev libtag1-dev python-numpy-dev python-numpy python-yaml\
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y git && mkdir /essentia \
+    && cd /essentia && git clone https://github.com/MTG/essentia.git
+RUN cd /essentia/essentia && /usr/bin/python3 waf configure --with-python
+RUN python3 waf && python3 waf install && ldconfig \
+    &&  apt-get remove -y build-essential libyaml-dev libfftw3-dev libavcodec-dev \
+        libavformat-dev libavutil-dev libavresample-dev python-dev libsamplerate0-dev \
+        libtag1-dev python-numpy-dev \
+    && apt-get autoremove -y \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/* \
+    && cd / && rm -rf /essentia/essentia
