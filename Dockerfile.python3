@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+ENV LANG C.UTF-8
+
 RUN apt-get update && apt-get -y upgrade
 
 RUN apt-get install -y build-essential libssl-dev libffi-dev python3-dev
@@ -7,13 +9,14 @@ RUN apt-get install -y build-essential libssl-dev libffi-dev python3-dev
 RUN apt-get update \
     && apt-get install -y build-essential libyaml-dev libfftw3-dev \
     libavcodec-dev libavformat-dev libavutil-dev libavresample-dev python-dev \
-    libsamplerate0-dev libtag1-dev python-numpy-dev python-numpy python-yaml\
+    libsamplerate0-dev libtag1-dev python-numpy-dev python-numpy python3-pip python-yaml\
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y git && mkdir /essentia \
     && cd /essentia && git clone https://github.com/MTG/essentia.git
-RUN cd /essentia/essentia && /usr/bin/python3 waf configure --with-python
-RUN python3 waf && python3 waf install && ldconfig \
+RUN pip3 install --upgrade pip && pip3 install numpy
+RUN cd /essentia/essentia && python3 waf configure --with-python \
+    && python3 waf && python3 waf install && ldconfig \
     &&  apt-get remove -y build-essential libyaml-dev libfftw3-dev libavcodec-dev \
         libavformat-dev libavutil-dev libavresample-dev python-dev libsamplerate0-dev \
         libtag1-dev python-numpy-dev \
