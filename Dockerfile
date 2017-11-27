@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get update \
     && apt-get install -y libyaml-0-2 libfftw3-3 libtag1v5 libsamplerate0 \
        libavcodec-ffmpeg56 libavformat-ffmpeg56 libavutil-ffmpeg54 \
-       libavresample-ffmpeg2 python python-numpy libpython2.7 python-numpy python-yaml \
+       libavresample-ffmpeg2 python python-numpy libpython2.7 python-numpy python-yaml python-six \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update \
