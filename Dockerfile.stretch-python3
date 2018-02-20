@@ -1,5 +1,7 @@
 FROM debian:stretch
 
+ENV LANG C.UTF-8
+
 RUN apt-get update \
     && apt-get install -y libyaml-0-2 libfftw3-3 libtag1v5 libsamplerate0 \
        libavcodec57 libavformat57 libavutil55 \
@@ -20,5 +22,7 @@ RUN apt-get update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* \
     && cd / && rm -rf /essentia/essentia
+
+ENV PYTHONPATH /usr/local/lib/python3/dist-packages
 
 WORKDIR /essentia
