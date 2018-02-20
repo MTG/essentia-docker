@@ -3,7 +3,7 @@ FROM debian:stretch
 RUN apt-get update \
     && apt-get install -y libyaml-0-2 libfftw3-3 libtag1v5 libsamplerate0 \
        libavcodec57 libavformat57 libavutil55 \
-       libavresample3 python python-numpy libpython2.7 python-numpy python-yaml \
+       libavresample3 python python-numpy libpython2.7 python-numpy python-yaml python-six \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update \
