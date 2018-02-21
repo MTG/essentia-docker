@@ -10,7 +10,7 @@ push:
 	docker push mtgupf/essentia:ubuntu16.04-python2
 	docker push mtgupf/essentia:ubuntu16.04-python3
 	docker push mtgupf/essentia:ubuntu17.10-python2
-	docker push mtgupf/essentia:ubuntu17.10-python2
+	docker push mtgupf/essentia:ubuntu17.10-python3
 	docker push mtgupf/essentia:stretch-python2
 	docker push mtgupf/essentia:stretch-python3
 
