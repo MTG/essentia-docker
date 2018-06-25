@@ -1,4 +1,4 @@
-build: ubuntu16.04-python2 ubuntu16.04-python3 ubuntu17.10-python2 ubuntu17.10-python2 stretch-python2 stretch-python3
+build: ubuntu16.04-python2 ubuntu16.04-python3 ubuntu17.10-python2 ubuntu17.10-python3 stretch-python2 stretch-python3
 
 ubuntu%:
 	docker build -f Dockerfile.$@ . -t mtgupf/essentia:$@
