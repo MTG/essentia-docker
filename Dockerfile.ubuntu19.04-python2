@@ -1,8 +1,8 @@
-FROM ubuntu:17.10
+FROM ubuntu:19.04
 
 RUN apt-get update \
     && apt-get install -y libyaml-0-2 libfftw3-3 libtag1v5 libsamplerate0 \
-       libavcodec57 libavformat57 libavutil55 libavresample3 \
+       libavcodec58 libavformat58 libavutil56 libavresample4 \
        python python-numpy libpython2.7 python-numpy python-yaml python-six \
     && rm -rf /var/lib/apt/lists/*
 

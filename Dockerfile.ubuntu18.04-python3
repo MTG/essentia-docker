@@ -1,11 +1,12 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 ENV LANG C.UTF-8
 
-RUN apt-get update && apt-get install -y python3-numpy python3-six \
-    libfftw3-3 libyaml-0-2 libtag1v5 libsamplerate0 libavcodec-ffmpeg56 \
-    libavformat-ffmpeg56 libavutil-ffmpeg54 \
-    libavresample-ffmpeg2 python3-yaml
+RUN apt-get update \
+    && apt-get install -y python3-numpy python3-six \
+       libfftw3-3 libyaml-0-2 libtag1v5 libsamplerate0 python3-yaml \
+       libavcodec57 libavformat57 libavutil55 libavresample3 \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update \
     && apt-get install -y build-essential python3-dev git \
