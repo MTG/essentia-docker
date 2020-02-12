@@ -1,7 +1,7 @@
 # Docker images for Essentia
 
 We provide docker images for the latest version of Essentia, which contains
- examples (command-line feature extractors), python bindings and vamp plugins.
+ examples (command-line feature extractors), python bindings, vamp plugins and also tensorflow support inside essentia (see [here](https://mtg.github.io/essentia-labs//news/2020/01/16/tensorflow-models-released/)).
 
 
 > https://hub.docker.com/r/mtgupf/essentia/
@@ -18,10 +18,12 @@ Images using the following base images are available:
 We also provide two variations of the essentia image, one with bindings for python2, and one for python3.
 Therefore, the current available tags are:
 
-  * `ubuntu18.04-python2` ([Dockerfile.ubuntu18.10-python2](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-python2))
-  * `ubuntu18.04-python3`, `latest` ([Dockerfile.ubuntu18.10-python3](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-python3))
+  * `ubuntu18.04-python2` ([Dockerfile.ubuntu18.04-python2](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-python2))
+  * `ubuntu18.04-python3`, `latest` ([Dockerfile.ubuntu18.04-python3](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-python3))
+  * `ubuntu18.04-python3-tensorflow` ([Dockerfile.ubuntu18.04-python3-tensorflow](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-python3-tensorflow))
   * `ubuntu19.04-python2` ([Dockerfile.ubuntu19.04-python2](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-python2))
   * `ubuntu19.04-python3` ([Dockerfile.ubuntu19.04-python3](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-python3))
+  * `ubuntu19.04-python3-tensorflow` ([Dockerfile.ubuntu19.04-python3-tensorflow](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-python3-tensorflow))
   * `stretch-python2` ([Dockerfile.stretch-python2](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.stretch-python2))
   * `stretch-python3` ([Dockerfile.stretch-python3](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.stretch-python3))
 
