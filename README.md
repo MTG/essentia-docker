@@ -2,11 +2,9 @@
 
 We provide docker images for the latest version of Essentia, which contain examples (command-line feature extractors), python bindings, vamp plugins and [tensorflow-support](https://mtg.github.io/essentia-labs//news/2020/01/16/tensorflow-models-released/).
 
-
 > https://hub.docker.com/r/mtgupf/essentia/
 
 > https://hub.docker.com/r/mtgupf/essentia-nightly/
-
 
 ## Versions
 
@@ -20,7 +18,7 @@ Images using the following base images are available:
 
 The current available tags are:
 
-  * `ubuntu18.04-v2.1_beta5`, `latest` ([Dockerfile.ubuntu18.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-v2.1_beta5))
+  * `ubuntu18.04-v2.1_beta5`, `latest` ([Dockerfile.ubuntu18.10-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-v2.1_beta5))
   * `ubuntu19.04-v2.1_beta5` ([Dockerfile.ubuntu19.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-v2.1_beta5))
   * `buster-v2.1_beta5` ([Dockerfile.buster-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.buster-v2.1_beta5))
 

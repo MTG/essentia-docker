@@ -16,6 +16,7 @@ nightly:
 	docker build --pull -f nightly/Dockerfile.ubuntu18.04-tensorflow-nightly . -t mtgupf/essentia-nightly:ubuntu18.04-tensorflow
 	docker build --pull -f nightly/Dockerfile.ubuntu19.04-tensorflow-nightly . -t mtgupf/essentia-nightly:ubuntu19.04-tensorflow
 
+
 push:
 	docker push mtgupf/essentia:ubuntu18.04-v2.1_beta5
 	docker push mtgupf/essentia:ubuntu19.10-v2.1_beta5
