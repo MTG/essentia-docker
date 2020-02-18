@@ -1,33 +1,48 @@
 # Docker images for Essentia
 
-We provide docker images for the latest version of Essentia, which contains
- examples (command-line feature extractors), python bindings, vamp plugins and also tensorflow support inside essentia (see [here](https://mtg.github.io/essentia-labs//news/2020/01/16/tensorflow-models-released/)).
+We provide docker images for the latest version of Essentia, which contain examples (command-line feature extractors), python bindings, vamp plugins and [tensorflow-support](https://mtg.github.io/essentia-labs//news/2020/01/16/tensorflow-models-released/).
 
 
 > https://hub.docker.com/r/mtgupf/essentia/
 
+> https://hub.docker.com/r/mtgupf/essentia-nightly/
+
 
 ## Versions
+
+### Latest Essentia release
 
 Images using the following base images are available:
 
  * ubuntu:18.04 (latest ubuntu LTS)
- * ubuntu:19.04 (latest ubuntu)
- * debian:stretch (debian "stable")
+ * ubuntu:19.10 (latest ubuntu)
+ * debian:buster (debian "stable")
 
-We also provide two variations of the essentia image, one with bindings for python2, and one for python3.
-Therefore, the current available tags are:
+The current available tags are:
 
-  * `ubuntu18.04-python2` ([Dockerfile.ubuntu18.04-python2](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-python2))
-  * `ubuntu18.04-python3`, `latest` ([Dockerfile.ubuntu18.04-python3](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-python3))
-  * `ubuntu18.04-python3-tensorflow` ([Dockerfile.ubuntu18.04-python3-tensorflow](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-python3-tensorflow))
-  * `ubuntu19.04-python2` ([Dockerfile.ubuntu19.04-python2](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-python2))
-  * `ubuntu19.04-python3` ([Dockerfile.ubuntu19.04-python3](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-python3))
-  * `ubuntu19.04-python3-tensorflow` ([Dockerfile.ubuntu19.04-python3-tensorflow](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-python3-tensorflow))
-  * `stretch-python2` ([Dockerfile.stretch-python2](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.stretch-python2))
-  * `stretch-python3` ([Dockerfile.stretch-python3](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.stretch-python3))
+  * `ubuntu18.04-v2.1_beta5`, `latest` ([Dockerfile.ubuntu18.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-v2.1_beta5))
+  * `ubuntu19.04-v2.1_beta5` ([Dockerfile.ubuntu19.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-v2.1_beta5))
+  * `buster-v2.1_beta5` ([Dockerfile.buster-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.buster-v2.1_beta5))
 
-Images are currently based off the HEAD of the [main essentia source tree](https://github.com/MTG/essentia) , and are updated from time to time.
+These images are based off the [v2.1_beta5 release]((https://github.com/MTG/essentia/tree/v2.1_beta5)) of the main essentia source tree.
+
+
+### Git Nightly
+For a more up-to-date version of essentia we provide the `mtgupf/essentia-nightly` image. This is updated periodically
+based on the most recent commit on the `master` branch of essentia.
+We provide the `latest` tag, based on Ubuntu 18.04 LTS:
+
+  *  `latest` ([Dockerfile.ubuntu18.04-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu18.04-nightly))
+
+Following tags are available for using essentia with [tensorflow-support](https://mtg.github.io/essentia-labs//news/2020/01/16/tensorflow-models-released/).
+
+  *  `ubuntu18.04-tensorflow` ([Dockerfile.ubuntu18.04-tensorflow-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu18.04-tensorflow-nightly))
+
+  *  `ubuntu19.04-tensorflow` ([Dockerfile.ubuntu19.04-tensorflow-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu19.04-tensorflow-nightly))
+
+
+### Python 2
+We no longer officially support Python 2, however we include a Dockerfile to build Essentia with Python 2 on Ubuntu 18.04 LTS in the `python2` directory. 
 
 
 ## Usage examples
@@ -41,7 +56,7 @@ Analyze a file `audio.wav` located in the current directory and write results to
 ### Essentia in python
 Run a python script using Essentia located in the current directory:
 
-    docker run -ti --rm -v `pwd`:/essentia mtgupf/essentia python test.py
+    docker run -ti --rm -v `pwd`:/essentia mtgupf/essentia python3 test.py
 
 ## Image management
 
@@ -49,6 +64,5 @@ You can rebuild an image and tag it locally using Make:
 
     make <tag>
     make ubuntu18.04-python3
-    make all # to build all images
-    make push <tag>
-    make push all # to push all images
+    make build # to build all images
+    make push # to push all images
