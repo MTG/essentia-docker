@@ -38,7 +38,7 @@ We provide the `latest` tag, based on Ubuntu 18.04 LTS:
 ### Tensorflow support
 
 The latest essentia have [tensorflow-support](https://mtg.github.io/essentia-labs//news/2019/10/19/tensorflow-models-in-essentia/) in order to easily integrate Machine Learning models into the audio processing and analysis pipelines. More details about this feature can be found [here](https://mtg.github.io/essentia-labs//news/2019/10/19/tensorflow-models-in-essentia/) and [here](https://mtg.github.io/essentia-labs//news/2020/01/16/tensorflow-models-released/).
-We provide `mtgupf/essentia-tensorflow` image which contains python3 bindings and examples(command-line feature extractors with tensorflow support). This will based on the most recent commit on the `master` branch of essentia. We provide the `latest` tag based on Ubuntu 18.04 LTS with Tensorflow 1.15.0 
+We provide `mtgupf/essentia-tensorflow` image which contains python3 bindings and examples(command-line feature extractors with tensorflow support). This will be based on the most recent commit on the `master` branch of essentia. We provide the `latest` tag based on Ubuntu 18.04 LTS with Tensorflow 1.15.0 
 
   *  `latest` ([Dockerfile.ubuntu18.04-tensorflow-v1.15.0](https://github.com/MTG/essentia-docker/blob/master/tensorflow/Dockerfile.ubuntu18.04-tensorflow-v1.15.0))
 
