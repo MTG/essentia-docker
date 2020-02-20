@@ -13,9 +13,9 @@ latest:
 
 nightly:
 	docker build --pull -f nightly/Dockerfile.ubuntu18.04-nightly . -t mtgupf/essentia-nightly:latest
-	docker build --pull -f nightly/Dockerfile.ubuntu18.04-tensorflow-nightly . -t mtgupf/essentia-nightly:ubuntu18.04-tensorflow
-	docker build --pull -f nightly/Dockerfile.ubuntu19.04-tensorflow-nightly . -t mtgupf/essentia-nightly:ubuntu19.04-tensorflow
 
+tensorflow:
+	docker build --pull -f tensorflow/Dockerfile.ubuntu18.04-tensorflow-v1.15.0 . -t mtgupf/essentia-tensorflow:latest
 
 push:
 	docker push mtgupf/essentia:ubuntu18.04-v2.1_beta5
@@ -23,7 +23,6 @@ push:
 	docker push mtgupf/essentia:buster-v2.1_beta5
 	docker push mtgupf/essentia:latest
 	docker push mtgupf/essentia-nightly:latest
-	docker push mtgupf/essentia-nightly:ubuntu18.04-tensorflow
-	docker push mtgupf/essentia-nightly:ubuntu19.04-tensorflow
+	docker push mtgupf/essentia-tensorflow:latest
 
-.PHONY: build latest nightly push
+.PHONY: build latest nightly tensorflow push
