@@ -5,7 +5,7 @@ ENV LANG C.UTF-8
 RUN apt-get update \
     && apt-get -y upgrade \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-       python3-numpy python3-six python3-yaml \
+       python3-matplotlib python3-numpy python3-six python3-yaml \
        libfftw3-3 libyaml-0-2 libtag1v5 libsamplerate0  \
        libavcodec58 libavformat58 libavutil56 libavresample4 \
     && rm -rf /var/lib/apt/lists/*
