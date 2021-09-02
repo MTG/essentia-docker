@@ -1,12 +1,12 @@
 # Docker images for Essentia
 
-We provide docker images for the latest version of Essentia, which contain
- examples (command-line feature extractors), python bindings and vamp plugins.
-
+We provide docker images for the latest version of Essentia, which contain examples (command-line feature extractors), python bindings, vamp plugins and [tensorflow-support](https://mtg.github.io/essentia-labs//news/2019/10/19/tensorflow-models-in-essentia/).
 
 > https://hub.docker.com/r/mtgupf/essentia/
+
 > https://hub.docker.com/r/mtgupf/essentia-nightly/
 
+> https://hub.docker.com/r/mtgupf/essentia-tensorflow/
 
 ## Versions
 
@@ -30,9 +30,17 @@ These images are based off the [v2.1_beta5 release]((https://github.com/MTG/esse
 ### Git Nightly
 For a more up-to-date version of essentia we provide the `mtgupf/essentia-nightly` image. This is updated periodically
 based on the most recent commit on the `master` branch of essentia.
-We provide only one tag, based on Ubuntu 18.04 LTS:
+We provide the `latest` tag, based on Ubuntu 18.04 LTS:
 
   *  `latest` ([Dockerfile.ubuntu18.04-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu18.04-nightly))
+
+
+### Tensorflow support
+
+The latest essentia have [tensorflow-support](https://mtg.github.io/essentia-labs//news/2019/10/19/tensorflow-models-in-essentia/) in order to easily integrate Machine Learning models into the audio processing and analysis pipelines. More details about this feature can be found [here](https://mtg.github.io/essentia-labs//news/2019/10/19/tensorflow-models-in-essentia/) and [here](https://mtg.github.io/essentia-labs//news/2020/01/16/tensorflow-models-released/).
+We provide `mtgupf/essentia-tensorflow` image which contains python3 bindings and examples(command-line feature extractors with tensorflow support). This will be based on the most recent commit on the `master` branch of essentia. We provide the `latest` tag based on Ubuntu 18.04 LTS with Tensorflow 1.15.0 
+
+  *  `latest` ([Dockerfile.ubuntu18.04-tensorflow-v1.15.0](https://github.com/MTG/essentia-docker/blob/master/tensorflow/Dockerfile.ubuntu18.04-tensorflow-v1.15.0))
 
 
 ### Python 2
@@ -50,7 +58,7 @@ Analyze a file `audio.wav` located in the current directory and write results to
 ### Essentia in python
 Run a python script using Essentia located in the current directory:
 
-    docker run -ti --rm -v `pwd`:/essentia mtgupf/essentia python test.py
+    docker run -ti --rm -v `pwd`:/essentia mtgupf/essentia python3 test.py
 
 ## Image management
 
