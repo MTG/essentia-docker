@@ -14,15 +14,15 @@ We provide docker images for the latest version of Essentia, which contain examp
 
 Images using the following base images are available:
 
- * ubuntu:18.04 (latest ubuntu LTS)
- * ubuntu:19.10 (latest ubuntu)
- * debian:buster (debian "stable")
+ * ubuntu:20.04 (latest ubuntu LTS)
+ * ubuntu:21.04 (latest ubuntu)
+ * debian:bullseye (debian "stable")
 
 The current available tags are:
 
-  * `ubuntu18.04-v2.1_beta5`, `latest` ([Dockerfile.ubuntu18.10-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu18.04-v2.1_beta5))
-  * `ubuntu19.04-v2.1_beta5` ([Dockerfile.ubuntu19.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu19.04-v2.1_beta5))
-  * `buster-v2.1_beta5` ([Dockerfile.buster-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.buster-v2.1_beta5))
+  * `ubuntu21.04-v2.1_beta5`, `latest` ([Dockerfile.ubuntu21.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu21.04-v2.1_beta5))
+  * `ubuntu20.04-v2.1_beta5` ([Dockerfile.ubuntu20.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu20.04-v2.1_beta5))
+  * `bullseye-v2.1_beta5` ([Dockerfile.bullseye-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.bullseye-v2.1_beta5))
 
 These images are based off the [v2.1_beta5 release]((https://github.com/MTG/essentia/tree/v2.1_beta5)) of the main essentia source tree.
 
@@ -30,9 +30,9 @@ These images are based off the [v2.1_beta5 release]((https://github.com/MTG/esse
 ### Git Nightly
 For a more up-to-date version of essentia we provide the `mtgupf/essentia-nightly` image. This is updated periodically
 based on the most recent commit on the `master` branch of essentia.
-We provide the `latest` tag, based on Ubuntu 18.04 LTS:
+We provide the `latest` tag, based on Ubuntu 20.04 LTS:
 
-  *  `latest` ([Dockerfile.ubuntu18.04-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu18.04-nightly))
+  *  `latest` ([Dockerfile.ubuntu20.04-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu20.04-nightly))
 
 
 ### Tensorflow support
@@ -65,6 +65,6 @@ Run a python script using Essentia located in the current directory:
 You can rebuild an image and tag it locally using Make:
 
     make <tag>
-    make ubuntu18.04-python3
+    make ubuntu20.04-v2.1_beta5
     make build # to build all images
     make push # to push all images
