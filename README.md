@@ -1,16 +1,21 @@
 # Docker images for Essentia
 
-We provide docker images for the latest version of Essentia, which contain examples (command-line feature extractors), python bindings, vamp plugins and [tensorflow-support](https://mtg.github.io/essentia-labs//news/2019/10/19/tensorflow-models-in-essentia/).
+We provide docker images for the latest version of Essentia, which contain examples (command-line feature extractors), python bindings and vamp plugins.
 
 > https://hub.docker.com/r/mtgupf/essentia/
 
 > https://hub.docker.com/r/mtgupf/essentia-nightly/
 
-> https://hub.docker.com/r/mtgupf/essentia-tensorflow/
-
 ## Versions
 
-### Latest Essentia release
+### Git Nightly
+For a more up-to-date version of essentia we provide the `mtgupf/essentia-nightly` image. This is updated periodically
+based on the most recent commit on the `master` branch of essentia.
+We provide the `latest` tag, based on Ubuntu 22.04 LTS:
+
+  *  `latest` ([Dockerfile.ubuntu22.04-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu22.04-nightly))
+
+### Latest Essentia release (v2.1_beta5, August 2019)
 
 Images using the following base images are available:
 
@@ -26,21 +31,14 @@ The current available tags are:
 
 These images are based off the [v2.1_beta5 release]((https://github.com/MTG/essentia/tree/v2.1_beta5)) of the main essentia source tree.
 
-
-### Git Nightly
-For a more up-to-date version of essentia we provide the `mtgupf/essentia-nightly` image. This is updated periodically
-based on the most recent commit on the `master` branch of essentia.
-We provide the `latest` tag, based on Ubuntu 20.04 LTS:
-
-  *  `latest` ([Dockerfile.ubuntu20.04-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu20.04-nightly))
-
-
 ### Tensorflow support
 
-The latest essentia have [tensorflow-support](https://mtg.github.io/essentia-labs//news/2019/10/19/tensorflow-models-in-essentia/) in order to easily integrate Machine Learning models into the audio processing and analysis pipelines. More details about this feature can be found [here](https://mtg.github.io/essentia-labs//news/2019/10/19/tensorflow-models-in-essentia/) and [here](https://mtg.github.io/essentia-labs//news/2020/01/16/tensorflow-models-released/).
-We provide `mtgupf/essentia-tensorflow` image which contains python3 bindings and examples(command-line feature extractors with tensorflow support). This will be based on the most recent commit on the `master` branch of essentia. We provide the `latest` tag based on Ubuntu 18.04 LTS with Tensorflow 1.15.0 
+We no longer provide a dedicated docker image with support for tensorflow included. Instead, you should use any
+base docker image with Python available and install our [essentia-tensorflow](https://pypi.org/project/essentia-tensorflow/),
+python wheel, e.g.,
 
-  *  `latest` ([Dockerfile.ubuntu18.04-tensorflow-v1.15.0](https://github.com/MTG/essentia-docker/blob/master/tensorflow/Dockerfile.ubuntu18.04-tensorflow-v1.15.0))
+    FROM ubuntu:22.10
+    RUN pip install --no-cache-dir essentia-tensorflow
 
 
 ### Python 2
