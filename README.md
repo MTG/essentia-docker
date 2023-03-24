@@ -20,13 +20,11 @@ This tag is based on Ubuntu 22.04 LTS:
 
 Images using the following base images are available:
 
- * ubuntu:20.04 (latest ubuntu LTS)
- * ubuntu:21.04 (latest ubuntu)
+ * ubuntu:20.04 (latest ubuntu LTS supported by this release)
  * debian:bullseye (debian "stable")
 
 The current available tags are:
 
-  * `ubuntu21.04-v2.1_beta5`, `latest` ([Dockerfile.ubuntu21.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu21.04-v2.1_beta5))
   * `ubuntu20.04-v2.1_beta5` ([Dockerfile.ubuntu20.04-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.ubuntu20.04-v2.1_beta5))
   * `bullseye-v2.1_beta5` ([Dockerfile.bullseye-v2.1_beta5](https://github.com/MTG/essentia-docker/blob/master/Dockerfile.bullseye-v2.1_beta5))
 
