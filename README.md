@@ -2,16 +2,17 @@
 
 We provide docker images for the latest version of Essentia, which contain examples (command-line feature extractors), python bindings and vamp plugins.
 
-> https://hub.docker.com/r/mtgupf/essentia/
-
-> https://hub.docker.com/r/mtgupf/essentia-nightly/
+> https://github.com/MTG/essentia/pkgs/container/essentia
 
 ## Versions
 
+As of April 2023 these images are hosted on Github Container Registry. Previously they were hosted on Docker Hub
+at `mtgupf/essentia` and `mtgupf/essentia-nightly`. Images on Docker Hub are no longer maintained.
+
 ### Git Nightly
-For a more up-to-date version of essentia we provide the `mtgupf/essentia-nightly` image. This is updated periodically
+For a more up-to-date version of essentia we provide the `nightly` tag of the `ghcr.io/mtg/essentia` image. This is updated periodically
 based on the most recent commit on the `master` branch of essentia.
-We provide the `latest` tag, based on Ubuntu 22.04 LTS:
+This tag is based on Ubuntu 22.04 LTS:
 
   *  `latest` ([Dockerfile.ubuntu22.04-nightly](https://github.com/MTG/essentia-docker/blob/master/nightly/Dockerfile.ubuntu22.04-nightly))
 
@@ -50,13 +51,13 @@ We no longer officially support Python 2, however we include a Dockerfile to bui
 ### Music extractor
 Analyze a file `audio.wav` located in the current directory and write results to the same directory:
 
-    docker run -ti --rm -v `pwd`:/essentia mtgupf/essentia essentia_streaming_extractor_music audio.wav audio.sig
+    docker run -ti --rm -v `pwd`:/essentia ghcr.io/mtg/essentia essentia_streaming_extractor_music audio.wav audio.sig
 
 
 ### Essentia in python
 Run a python script using Essentia located in the current directory:
 
-    docker run -ti --rm -v `pwd`:/essentia mtgupf/essentia python3 test.py
+    docker run -ti --rm -v `pwd`:/essentia ghcr.io/mtg/essentia python3 test.py
 
 ## Image management
 
